@@ -1,0 +1,78 @@
+$pink: #ff007e;
+
+p {
+  color: $pink;
+}
+
+$myColor_1: #E4F2F1;
+$myColor_2: #2c66b0;
+
+$myColor_3: palegoldenrod;
+
+$myFont: Calibri;
+
+html {
+    font-family: $myFont, Arial, sans-
+    serif;
+}
+
+h1 {
+    color:$myColor_2;
+    // Bsp. fuer Nesting
+    // &:hover {
+    //     background-color: lighten($color: $myColor_3);
+    // }
+}
+
+ul {
+    margin: .4em 0;
+    float: left;
+    width: 100%;
+    list-style-type: none;
+        li {
+            float: left;
+                a {
+                    color: $myColor_1;
+                    text-decoration: none;
+                    display: block;
+                    padding: .7em;
+                    border-right: 3px #ff007e solid;
+                    background-color:
+                    $myColor_2;
+                }
+        }
+}
+
+a {
+    &:hover, &:focus {
+        background-color: lighten($myColor_3,10%);
+        color: $myColor_3;
+        padding: 100px 0 100px 0;
+    }
+}
+
+$primary-color: #bdbdff;
+
+// Loops
+$sizes: 40px, 50px, 80px;
+
+/* For-each */
+@each $size in $sizes {
+    .icon-#{$size} {
+    font-size: $size;
+    height: $size;
+    width: $size;
+    }
+}
+
+/* Maps */
+$my-map: (h1:2em, h2:1.6em, h3:1.2em);
+@each $tag, $size in $my-map {
+    #{$tag} {
+        font-size: $size;
+    }
+}
+// oder 
+// h1 {
+// width: nth($sizes, 2)
+// }

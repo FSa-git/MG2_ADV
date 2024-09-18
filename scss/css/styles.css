@@ -1,0 +1,67 @@
+p {
+  color: #ff007e;
+}
+
+html {
+  font-family: Calibri, Arial, sans- serif;
+}
+
+h1 {
+  color: #2c66b0;
+}
+
+ul {
+  margin: 0.4em 0;
+  float: left;
+  width: 100%;
+  list-style-type: none;
+}
+ul li {
+  float: left;
+}
+ul li a {
+  color: #E4F2F1;
+  text-decoration: none;
+  display: block;
+  padding: 0.7em;
+  border-right: 3px #ff007e solid;
+  background-color: #2c66b0;
+}
+
+a:hover, a:focus {
+  background-color: #f7f4d5;
+  color: palegoldenrod;
+  padding: 100px 0 100px 0;
+}
+
+/* For-each */
+.icon-40px {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+}
+
+.icon-50px {
+  font-size: 50px;
+  height: 50px;
+  width: 50px;
+}
+
+.icon-80px {
+  font-size: 80px;
+  height: 80px;
+  width: 80px;
+}
+
+/* Maps */
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.6em;
+}
+
+h3 {
+  font-size: 1.2em;
+}/*# sourceMappingURL=styles.css.map */
