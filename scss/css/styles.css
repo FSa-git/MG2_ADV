@@ -64,4 +64,45 @@ h2 {
 
 h3 {
   font-size: 1.2em;
+}
+
+/* Mixins testen */
+.wrapper {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #ff007e;
+  font-size: 2em;
+  font-weight: normal;
+}
+
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #ff007e;
+  font-size: 1.6em;
+  font-weight: normal;
+}
+
+/* Extend mit einer Box testen (S. 12 Skript) */
+.warning, .error, .success, h1, h2 {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+  margin: 20px;
+  width: 200px;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
 }/*# sourceMappingURL=styles.css.map */

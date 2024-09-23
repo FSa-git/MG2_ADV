@@ -76,3 +76,75 @@ $my-map: (h1:2em, h2:1.6em, h3:1.2em);
 // h1 {
 // width: nth($sizes, 2)
 // }
+
+/* Mixins testen */
+@mixin border-box{
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    @include border-box;
+}
+
+// @mixin heading($size){
+//     font-family: Georgia, 'Times New Roman', Times, serif;
+//     color: $pink;
+//     font-size: $size;
+//     font-weight: normal;
+// }
+// h1{
+//   @include heading(2em);  
+// }
+// h2{
+//     @include heading(1.6em);
+// }
+
+/* Extend mit einer Box testen (S. 12 Skript) */
+%message {
+    border: 1px solid #ccc;
+    padding: 10px;
+    color: #333;
+    margin: 20px;
+    width: 200px;
+}
+
+.success {
+    @extend %message;
+    border-color: green;
+}
+
+.error {
+    @extend %message;
+    border-color: red;
+}
+
+.warning {
+    @extend %message;
+    border-color: yellow;
+}
+
+/* Frau Ridders Lösung */
+@mixin ueberschrift($groesse) {
+    @extend %ueberschrift; 
+    font-size: $groesse;
+}
+
+/* Fehler */
+// h1{
+//     @include ueberschrift(3em);
+// }
+// h2{
+//     @include ueberschrift(2em);
+// }
+// h3 {
+//     @include ueberschrift(1.4em);
+// }
+
+// ersetzen durch 
+$my-map: (h1:2em, h2:1.6em, h3:1.2em, h4:1.1em);
+@each $key, $value in $my-map {
+#{$key}{
+    @include ueberschrift($value);    
+    }
+}
