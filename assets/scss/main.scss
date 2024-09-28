@@ -1,0 +1,8 @@
+@use '_fonts';
+@use '_colors';
+
+body{
+    color: $brand; 
+    font-size: $font-size;
+}
+

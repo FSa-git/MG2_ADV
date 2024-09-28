@@ -1,0 +1,14 @@
+{
+  "name": "mg2_adv",
+  "version": "1.0.0",
+  "description": "test npm",
+  "main": "index.js",
+  "scripts": {
+    "sass-dev": "sass --watch assets/scss:assets/css"
+  },
+  "author": "francesco",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.79.3"
+  }
+}
