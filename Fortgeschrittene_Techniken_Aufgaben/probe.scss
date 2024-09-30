@@ -1,0 +1,138 @@
+
+
+// div {
+//     @if 3 > 1 {background-color: red;}
+//     @if 3 == 1 {background-color: green;}
+//     @if 3 < 1 {background-color: blue;}
+// }
+
+
+// $sidebar-alignment: left; 
+// .sidebar {
+//     float: $sidebar-alignment;
+//     @if $sidebar-alignment == left {
+//         margin-right: 2em;
+//     }
+//     else{
+//         margin-left: 2em;
+//     }
+// }
+
+
+// $sidebar-alignment: bottom; 
+// .sidebar {
+//     @if $sidebar-alignment == left {
+//         margin-right: 2em;
+//         float: $sidebar-alignment;
+//         width: 30%;
+//     }
+//     @else if $sidebar-alignment == right {
+//         margin-left: 2em;
+//         float: $sidebar-alignment;
+//         width: 30%;
+//     }
+//     @else {
+//         margin-top: 2em;
+//         float: none;
+//         width: 100%;
+//     }
+// }
+
+
+// @for $i from 1 through 4 {
+//     .class-#{i} {width: 10px * $i;}
+// }
+
+
+// @for $i from 1 to 4 {
+//     .class-#{i} {width: 10px * $i;}
+// }
+
+
+// $grid-columns: 12;
+
+// @for $i from 1 through $grid-columns {
+//     .columns-span-#{$i} {
+//         width: calc(100% / $grid-columns * $i);
+//     }
+// }
+
+
+// $icon-list: home, rss, google, facebook, twitter; 
+
+// @each $icon in $icon-list {
+//     .icon-#{$icon}{
+//         background: url("img/icon-#{$icon}.png");
+//     }
+// }
+
+
+// $icon-list: (home svg 64px), 
+// (rss gif 16px), 
+// (google png 32px), 
+// (facebook png 32px), 
+// (twitter png 32px); 
+
+// @each $icon in $icon-list {
+//     $icon-name: nth($icon, 1); 
+//     $icon-format: nth($icon, 2);
+//     $icon-size: nth($icon, 3);
+//     .icon-#{$icon-name}{
+//         height: $icon-size;
+//         width: $icon-size;
+//         background: url("/img/icon-#{$icon-name}.#{$icon-format}");
+//     }
+// }
+
+
+// @each $name, $format, $size in $icon-list {
+//     .icon-#{$name}{
+//         height: $size;
+//         width: $size;
+//         background: url("img/icon-#{$name}.#{$format}");
+//     }
+// }
+
+
+// $my-map: (h1:2em, h2:1.6em, h3:1.2em);
+// @each $tag, $size in $my-map {
+//     #{$tag}{
+//         font-size: $size;
+//     }
+// }
+
+
+// $i: 1; 
+// @while $i <= 10 {
+//     .offset-#{$i}{
+//         margin-left: $i * 10px;
+//     }
+// $i: $i + 1;
+// }
+
+
+// @function multiply-a-with-b($a, $b) {
+//     @return $a * $b; 
+// }
+// div {
+//     width: multiply-a-with-b(2px, 7);
+// }
+
+
+// @function color-theme($color) {
+//     @if $color == spring {
+//         @return lime;
+//     }
+//         @else if $color == summer {
+//             @return tomato; 
+//         }
+//         @else if $color == autumn {
+//             @return gold; 
+//         }
+//         @else if $color == winter {
+//             @return cyan; 
+//         }
+// }
+// div{
+// background-color: color-theme(autumn);
+// }
