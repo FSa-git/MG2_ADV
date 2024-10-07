@@ -1,0 +1,26 @@
+@use 'variables' as v;
+
+body {
+    font-family: v.$font;
+}
+%ueber {
+    font-family: v.$specialfont, Garamond, Times, serif;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    color: v.$maincolor;
+}
+
+@mixin heading($font-size) {
+    font-size: $font-size;
+    @extend %ueber;
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        $font-size: 2em - $i * 0.3;
+        @include heading($font-size);
+    }
+}
+
