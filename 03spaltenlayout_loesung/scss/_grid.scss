@@ -1,0 +1,38 @@
+@use 'variables';
+$gutter: 1em;
+$gridcounter: 8;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+%box {
+  box-sizing: border-box;
+  padding: $gutter;
+  background-color: lighten(desaturate(variables.$maincolor, 20%), 50%);
+  border: 10px solid white;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@each $name, $breite in variables.$breakpoints {
+  // $name: nth($breakpoint, 1);
+  // $breite: nth($breakpoint, 2);
+
+  @for $i from 1 through $gridcounter {
+    .col-#{$name}-#{$i} {
+      @extend %box;
+    }
+  }
+
+  @media (min-width: $breite) {
+    @for $i from 1 through $gridcounter {
+      .col-#{$name}-#{$i} {
+        $part: calc(100% / $gridcounter) * $i;
+        flex: 0 0 $part;
+        max-width: $part;
+      }
+    }
+  }
+}
