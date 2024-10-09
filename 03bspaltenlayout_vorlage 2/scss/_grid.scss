@@ -1,0 +1,24 @@
+$gutter: 1em; /* Abstände der Spalten zueinander */
+$gridcounter: 8; /* Anzahl der maximalen Spalten, Bootstrap verwendet standardmaessig 12*/
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+%box {
+  box-sizing: border-box;
+  padding: $gutter;
+  border: 1px dotted $maincolor;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@each $breakpoint, $breite in $breakpoints {
+  @for $i from 1 through $gridcounter {
+    /* Alle cols sollen erst einmal gleich definiert werden */
+    /* .col-irgendwas-irgendwasanderes (z. B. col-lg-1) {
+            hier Extend benutzen
+        } */
+  }
+}
+
+/* Anschließend soll für jeden Breakpoint die cols (.col-sm-1 usw usw) der berechnete Anteil von 100% zu gewiesen werden. Damit das responsive Aussehen funktioniert müssen Media Queries verwendet werden. */
