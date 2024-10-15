@@ -1,0 +1,33 @@
+body {
+  font-family: Consolas, Helvetica, Arial, sans-serif;
+}
+
+tr:nth-child(5n+1) {
+  background-color: #0bac3d;
+}
+
+tr:nth-child(5n+2) {
+  background-color: #0edc4e;
+}
+
+tr:nth-child(5n+3) {
+  background-color: #2cf169;
+}
+
+tr:nth-child(5n+4) {
+  background-color: #5cf48b;
+}
+
+tr:nth-child(5n+5) {
+  background-color: #8bf8ad;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td,
+th {
+  padding: 10px;
+}/*# sourceMappingURL=styles.css.map */

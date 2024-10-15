@@ -1,0 +1,24 @@
+$tableCounter: 5;
+$myColor:#087c2c;
+$mySize:10px;
+$diffColor: 50% / $tableCounter;
+
+body {
+    font-family: Consolas, Helvetica, Arial, sans-serif;
+}
+
+@for $i from 1 through ($tableCounter) {
+    tr:nth-child(#{$tableCounter}n + #{$i}) {
+        background-color: lighten($myColor, $diffColor * $i);
+    }
+}
+
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+
+td,
+th {
+    padding: $mySize;
+}
