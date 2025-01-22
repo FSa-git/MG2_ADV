@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+    <text x="30" y="20">Rechteck</text>
+    <rect x="20" y="25" width="250" height="125" fill="#d33" />
+    <!--Form ist stand-alone Element
+    X-rechts
+    y-unten-->
+</svg>

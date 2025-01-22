@@ -1,0 +1,11 @@
+<svg width="150" height="150" viewBox="0 0 200 100">
+    <circle id="kreis1" cx="25" cy="25" r="20" fill="rgba(128, 0, 128, 1.0)" stroke="rgba(0,255,0,0.25)"
+        stroke-width="10" />
+    <circle id="kreis2" cx="65" cy="25" r="20" fill="rgba(128, 0, 128, 1.0)" stroke="rgba(0,255,0,0.25)"
+        stroke-width="10" />
+    <circle id="kreis2" cx="105" cy="25" r="20" fill="rgba(128, 0, 128, 1.0)" stroke="rgba(0,255,0,0.25)"
+        stroke-width="10" />
+    <text x="35" y="30" font-family="myriad pro" font-weight="bold" fill="rgba(128,128,1)">
+        Reifen Richter
+    </text>
+</svg>

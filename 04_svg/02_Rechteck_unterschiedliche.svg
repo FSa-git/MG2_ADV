@@ -1,0 +1,26 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="600" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- 1. Rechteck 1 -->
+    <text x="150" y="30" font-size="16px" font-family="verdana">
+        Rechteck 1
+    </text>
+    <rect x="10" y="10" width="90" height="40" fill="#ff0000" />
+
+    <!-- 2. Rechteck 2 -->
+    <text x="150" y="130" font-size="16px" font-family="verdana">
+        Rechteck 2
+    </text>
+    <rect x="10" y="110" width="90" height="40" ry="5" rx="5" fill="blue" stroke="black" />
+
+    <!-- 3. Rechteck 3 -->
+    <text x="150" y="230" font-size="16px" font-family="verdana">
+        Rechteck 3
+    </text>
+    <rect x="10" y="210" width="90" height="40" fill="red" stroke="blue" stroke-width="4" />
+
+    <!-- 4. Rechteck 4 -->
+    <text x="150" y="310" font-size="16px" font-family="verdana">
+        Rechteck 4
+    </text>
+    <rect x="10" y="270" width="90" height="40" fill="#33cc33" stroke="black" />
+</svg>
