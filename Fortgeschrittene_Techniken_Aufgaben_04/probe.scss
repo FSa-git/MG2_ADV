@@ -132,7 +132,10 @@
 //         @else if $color == winter {
 //             @return cyan; 
 //         }
+//         @else if $color == $color {
+//             @return $color;
+//         }
 // }
 // div{
-// background-color: color-theme(autumn);
+// background-color: color-theme(violet);
 // }
