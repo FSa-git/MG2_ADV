@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300">
+  <title>das transform-Attribut</title>
+  <desc>translate - Verschieben</desc>
+  <defs>
+    <style type="text/css">
+      text {
+        font-family: Verdana, sans-serif;
+        font-size: 10px;
+      }
+    </style>
+    <symbol id="ks">
+      <g id="kreis1">
+        <desc>kreis</desc>
+        <circle cx="20" cy="20" r="15" fill="#BCE2F5" stroke="#055078" />
+        <polyline points="15,25 20,15 25,25" stroke="#055078" fill="none" />
+      </g>
+
+    </symbol>
+  </defs>
+
+  <svg x="10" y="10" width="900" height="900">
+    <use xlink:href="#ks" transform="translate(50,20) scale(2) rotate(109)" />
+    <!-- <use xlink:href="#ks" transform="translate(100)" />
+    <use xlink:href="#ks" transform="translate(0,100)" /> -->
+    <use xlink:href="#ks" transform="translate(100,100) scale(2) rotate(109)" />
+
+
+    <text x="10" y="70">keine Verschiebung</text>
+    <!-- <text x="130" y="70">100 px nur x-Achse
+      <tspan x="130" y="85">translate(100)</tspan>
+    </text>
+    <text x="10" y="200">100 px nur y-Achse
+      <tspan x="10" y="180">translate(0,100)</tspan>
+    </text>
+    <text x="130" y="200">100 px in beide Richtungen
+      <tspan x="130" y="180">translate(100,100)</tspan>
+    </text> -->
+  </svg>
+</svg>
