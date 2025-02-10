@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Wiese mit zufälligen Blumen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        svg {
+            display: block;
+            margin: 20px auto;
+            background-color: #7efc00a5; /* Grasgrüne Wiese */
+            border: 2px solid #000;
+            cursor: crosshair;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Klicke auf die Wiese, um bunte Flowers zu platzieren!</h2>
+
+    <!-- SVG Wiese -->
+    <svg id="wiese" width="600" height="400">
+        <!-- Die Wiese ist einfach das SVG-Hauptfeld -->
+    </svg>
+
+    <script>
+       const wiese = document.getElementById("wiese");
+
+        // Funktion zur Erzeugung einer zufälligen Farbe
+        function getRandomColor() {
+            return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+        }
+
+        // Event-Listener für Klicks auf die Wiese
+        wiese.addEventListener("click", (event) => {
+            const rect = wiese.getBoundingClientRect(); // SVG-Position holen
+            const x = event.clientX - rect.left - 100; // X-Koordinate berechnen
+            const y = event.clientY - rect.top - 100;  // Y-Koordinate berechnen
+
+            // Blume-Element erstellen
+            const blume = document.createElementNS("http://www.w3.org/2000/svg", "path");
+            blume.setAttribute('transform', `translate(${x}, ${y})`);
+            blume.setAttribute('cy', y);
+            blume.setAttribute("d", "M169.8,121c-33.87,58.45-57.64,4.13-57.64,4.13s24.57,53-29.28,49.83-21.74-53.55-21.74-53.55S20.68,160.82,4.7,109,48.91,71.78,48.91,71.78-25.77,54.22,43.3,14.26,92.37,44.8,92.37,44.8s18.89-51.36,53-23.11S131.46,77.8,131.46,77.8,203.67,62.58,169.8,121Z");
+            blume.setAttribute("fill", getRandomColor());
+            blume.setAttribute("stroke", getRandomColor());
+            blume.setAttribute("stroke-width", 3);
+
+            // Flow zum SVG hinzufügen
+            wiese.appendChild(blume);
+        });
+    </script>
+
+</body>
+</html>

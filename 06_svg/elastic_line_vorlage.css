@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(77, 77, 77);
+}
+svg{
+    position: absolute;
+    width: 400px;
+    fill: none;
+}
+
+svg:nth-child(2){
+    filter: blur(40px) ;
+}
+
+svg path{
+    d: path("M0,25c150,85,150-85,300,0");
+    animation: animate 5s infinite alternate;
+    stroke: #ff0092;
+    stroke-width: 50;
+    stroke-linecap: round;
+    transform: translate(50px,50%);
+   
+}
+
+/* der zweite Path hat folgende Eigenschaften
+d: path("M0,24.5c150-85,150,85,300,0");
+        stroke: #00c3ff;
+Erstellen Sie eine Animation mit @keyframes, die den einen Pfad in den anderen übergehen lässt.
+        */
+
+@keyframes animate {
+   
+}

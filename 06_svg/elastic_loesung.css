@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(77, 77, 77);
+}
+svg{
+    position: absolute;
+    width: 400px;
+    fill: none;
+}
+
+svg:nth-child(2){
+    filter: blur(40px) ;
+}
+
+svg path{
+    d: path("M0,25c150,85,150-85,300,0");
+    stroke: #ff0092;
+    stroke-width: 50;
+    stroke-linecap: round;
+    transform: translate(50px,50%);
+    animation: animate 0.5s infinite alternate ease-in-out;
+   
+}
+
+/* der zweite Path hat folgende Eigenschaften
+d: path("M0,24.5c150-85,150,85,300,0");
+        stroke: #00c3ff;
+Erstellen Sie eine Animation mit @keyframes, die den einen Pfad in den anderen übergehen lässt.
+        */
+
+        @keyframes animate {
+            0% {
+                d: path("M0,25c150,85,150-85,300,0");
+                stroke: #ff0000; /* Rot */
+            }
+        
+            16% {
+                stroke: #ff7f00; /* Orange */
+            }
+        
+            32% {
+                stroke: #ffff00; /* Gelb */
+            }
+        
+            48% {
+                stroke: #00ff00; /* Grün */
+            }
+        
+            64% {
+                stroke: #0000ff; /* Blau */
+            }
+        
+            80% {
+                stroke: #4b0082; /* Indigo */
+            }
+        
+            100% {
+                d: path("M0,24.5c150-85,150,85,300,0");
+                stroke: #8b00ff; /* Violett */
+            }
+        }

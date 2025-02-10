@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SVG einbetten - verschiedene Techniken</title>
+    <style>
+        body,
+        label {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        #rahmen {
+            width: 40%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Blumen umfärben</h1>
+    <div id="rahmen">
+        <p>
+            <label for="fillColor">Füllfarbe:</label>
+            <input type="color" id="fillColor" class="color-picker" value="#ff0000">
+            
+            <!-- Farbwahl für Rand -->
+            <label for="strokeColor">Randfarbe:</label>
+            <input type="color" id="strokeColor" class="color-picker" value="#000000">
+
+            <button id="go">Blume neu malen</button>
+        </p>
+        </p>
+        <svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180.84 177.14">
+            <title>blume</title>
+            <path fill="rgba(128, 0, 128, 1.0)" stroke="#ea561d" stroke-width="4" id="blume"
+                d="M169.8,121c-33.87,58.45-57.64,4.13-57.64,4.13s24.57,53-29.28,49.83-21.74-53.55-21.74-53.55S20.68,160.82,4.7,109,48.91,71.78,48.91,71.78-25.77,54.22,43.3,14.26,92.37,44.8,92.37,44.8s18.89-51.36,53-23.11S131.46,77.8,131.46,77.8,203.67,62.58,169.8,121Z" />
+        </svg>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+          document.getElementById('go').addEventListener('click', changeFill);
+
+        });
+
+        function changeFill(){
+            let fillColor = document.getElementById('fillColor').value;
+            let strokeColor = document.getElementById('strokeColor').value;
+            document.getElementById('blume').setAttribute('fill', fillColor);
+            document.getElementById('blume').setAttribute('stroke', strokeColor);
+        }
+    </script>
+
+</body>
+
+</html>
