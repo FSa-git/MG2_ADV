@@ -14,7 +14,7 @@ const svg = d3.select("#pizza-chart").append("svg")
 //          und konvertiere die Werte in Zahlen
 d3.csv("pizza.csv").then(data => {
   data.forEach(d => {
-    d.statistik = +d.statistik;
+    d.statistik = +d.statistik; // hier wird der Wert in eine Zahl umgewandelt
   });
 
   //TODO - 2. Sortiere die Daten nach der Spalte statistik
@@ -22,7 +22,7 @@ d3.csv("pizza.csv").then(data => {
     return d3.ascending(a.statistik, b.statistik);
   });
 
-  //TODO - 3. Definiere die Skalen für die x- und y-Achse
+  // Definiere die Skalen für die x- und y-Achse
   const x = d3.scaleLinear()
     .range([0, width])
     .domain([0, d3.max(data, function (d) { return d.statistik; })]);
@@ -41,15 +41,15 @@ d3.csv("pizza.csv").then(data => {
     .tickPadding(10);
 
 
-  //TODO - 5. Erstelle die Balken für das Diagramm
+  //TODO - 3. Erstelle die Balken für das Diagramm
   svg.selectAll(".bar")
     .data(data)
     .enter().append("rect")
     .attr("class", "bar")
-    .attr("y", function (d) { return y(d.pizza_adv); })
-    .attr("height", y.bandwidth())
-    .attr("x", 0)
-    .attr("width", function (d) { return x(d.statistik); })
+    .attr("y", function (d) { return y(d.pizza_adv); }) // das bedeutet, dass die Balken bei 0 anfangen
+    .attr("height", y.bandwidth()) // bandwith() gibt die Breite der Balken zurück
+    .attr("x", 0) // das bedeutet, dass die Balken bei 0 anfangen
+    .attr("width", function (d) { return x(d.statistik); }) // das bedeutet, dass die Balken bei 0 anfangen
     .attr('fill', 'orange')
 
   // X- und Y-Achsen hinzufügen
@@ -73,7 +73,8 @@ d3.csv("pizza.csv").then(data => {
     });
 
 
-  // Beschriftung der Balken hinzufügen
+  // Beschriftung der Balken hinzufügen 
+  // Zahl am Ende
   svg.selectAll(".label")
     .data(data)
     .enter().append("text")
@@ -82,11 +83,11 @@ d3.csv("pizza.csv").then(data => {
     .attr("y", function (d) { return y(d.pizza_adv) + y.bandwidth() / 2; })
     .attr("dy", ".35em")
 
-    //TODO - 7. Füge Styles hinzu
+    //TODO - 4. Füge Styles hinzu
     .style("font-family", "sans-serif")
     .style("font-size", "10px")
     .style("font-weight", "bold")
-    .style('fill', '#3c3d28')
+    .style('fill', 'green')
 
     .text(function (d) { return d.statistik; });
 
@@ -105,7 +106,6 @@ d3.csv("pizza.csv").then(data => {
     .attr("x", margin.left - 335)
     .attr("y", margin.top - 110)
 
-    // TODO - 8. Füge Styles für den Titel hinzu
     .style("font-size", "14px")
     .style("font-weight", "bold")
     .style("font-family", "sans-serif")
@@ -117,10 +117,10 @@ d3.csv("pizza.csv").then(data => {
   svg.append("text")
     .attr("transform", "translate(" + (margin.left - 335) + "," + (height + margin.bottom - 10) + ")")
     // TODO - 9. Füge Quelle hinzu
-    // .style("text-anchor", "start")
-    // .style("font-size", "8px")
-    // .style("fill", "lightgray")
-    // .style("font-family", "sans-serif")
+    .style("text-anchor", "start")
+    .style("font-size", "8px")
+    .style("fill", "lightgray")
+    .style("font-family", "sans-serif")
     .html("<a href='https://www.tageskarte.io/gastronomie/detail/die-beliebteste-pizza-der-deutschen.html'>Source: blabla.de</a>");
 
 });
