@@ -18,8 +18,8 @@ d3.csv("pizza.csv").then(data => {
   });
 
   //TODO - 2. Sortiere die Daten nach der Spalte statistik
-  data.sort(function (a, b) {
-    return d3.ascending(a.statistik, b.statistik);
+  data.sort(function (a, b) { 
+    return d3.ascending(a.statistik, b.statistik); // das bedeutet, dass die Daten aufsteigend sortiert werden
   });
 
   // Definiere die Skalen für die x- und y-Achse
