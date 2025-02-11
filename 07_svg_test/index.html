@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <svg></svg>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+      // Dein D3.js-Code hier (den du bereits geschrieben hast)
+    const data = [
+      { month: 'January', value: 30 },
+      { month: 'February', value: 80 },
+      { month: 'March', value: 45 },
+      { month: 'April', value: 60 },
+      { month: 'May', value: 90 },
+      { month: 'June', value: 55 }
+    ];
+
+    const margin = { top: 20, right: 30, bottom: 40, left: 40 };
+    const width = 800 - margin.left - margin.right;
+    const height = 400 - margin.top - margin.bottom;
+
+    const x = d3.scaleBand()
+      .domain(data.map(d => d.month))
+      .range([0, width])
+      .padding(0.1);
+
+    const y = d3.scaleLinear()
+      .domain([0, d3.max(data, d => d.value)])
+      .nice()
+      .range([height, 0]);
+
+    const svg = d3.select('svg')
+      .attr('width', width + margin.left + margin.right)
+      .attr('height', height + margin.top + margin.bottom)
+      .append('g')
+      .attr('transform', `translate(${margin.left},${margin.top})`);
+
+    svg.selectAll('.bar')
+      .data(data)
+      .enter()
+      .append('rect')
+      .attr('class', 'bar')
+      .attr('x', d => x(d.month))
+      .attr('y', d => y(d.value))
+      .attr('width', x.bandwidth())
+      .attr('height', d => height - y(d.value))
+      .attr('fill', 'orange');
+
+    svg.append('g')
+      .attr('transform', `translate(0,${height})`)
+      .call(d3.axisBottom(x));
+
+    svg.append('g')
+      .call(d3.axisLeft(y));
+    </script>
+</body>
+</html>
